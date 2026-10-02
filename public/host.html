@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Màn Chiếu Chủ Phòng - HCMUTE EduQuiz</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="images/logo-ute.png">
+</head>
+<body>
+  <!-- Host Header -->
+  <header class="host-header-bar">
+    <div class="brand-wrapper">
+      <img src="images/logo-ute.png" alt="HCMUTE" class="ute-logo">
+      <div class="brand-text">
+        <h1>HCMUTE <span class="highlight">EduQuiz</span> • MÀN CHIẾU ĐIỀU KHIỂN</h1>
+        <p>Khoa Lý Luận Chính Trị • Triết Học Mác - Lênin (LLCT130105)</p>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <div class="audio-control-wrap">
+        <button type="button" class="audio-toggle-btn" id="btn-host-audio-toggle" title="Bật/Tắt âm thanh">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <input type="range" class="volume-range" id="host-volume-slider" min="0" max="100" value="85" title="Điều chỉnh âm lượng">
+      </div>
+      <div class="pin-display-card">
+        <i class="fa-solid fa-bolt" style="color:var(--duo-yellow-dark);"></i> PIN: <span id="host-pin-val">130105</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-wrapper" style="max-width:1100px;">
+
+    <!-- VIEW 1: HOST LOBBY -->
+    <section id="host-screen-lobby" class="screen active">
+      <div class="host-lobby-banner">
+        <div class="join-mascot-badge" style="width:76px; height:76px; font-size:2.8rem; margin:0 auto 12px;">🌟</div>
+        <span class="join-badge">Phòng thi tương tác lớp học</span>
+        <h2 style="font-family:'Nunito',sans-serif; font-size: 2.1rem; font-weight:900; margin: 8px 0 6px; color:var(--primary-navy);">
+          Cặp Phạm Trù Nguyên Nhân & Kết Quả
+        </h2>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 650px; margin: 0 auto 16px; font-weight:600;">
+          Sinh viên quét mã QR hoặc truy cập link bên dưới, nhập Họ tên & MSSV để tham gia.
+        </p>
+
+        <div style="display:inline-flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:16px; background:#f1f5f9; padding:10px 24px; border-radius:var(--radius-pill); border:2px solid var(--border-light); border-bottom:3.5px solid var(--border-3d); margin-bottom:18px; font-size:0.95rem; font-weight:700;">
+          <span>🌐 Link tham gia: <strong style="color:var(--duo-blue-dark);" id="host-join-url">http://localhost:3000</strong></span>
+          <span>🔑 Mã PIN: <strong style="color:var(--accent-amber); font-size:1.15rem; font-family:'Nunito',sans-serif;">130105</strong></span>
+        </div>
+
+        <!-- Dynamic QR Code Card -->
+        <div style="display:flex; flex-direction:column; align-items:center; margin: 8px 0 16px;">
+          <div style="background:#ffffff; padding:14px; border-radius:18px; border:2px solid var(--border-light); border-bottom:5px solid var(--border-3d); box-shadow: var(--shadow-sm); display:flex; flex-direction:column; align-items:center;">
+            <img id="host-qr-img" src="" alt="Mã QR Tham Gia" style="width:210px; height:210px; object-fit:contain; display:block; border-radius:8px;">
+            <div style="margin-top:8px; font-size:0.85rem; font-weight:800; color:var(--primary-navy); text-transform:uppercase; letter-spacing:0.5px;">
+              <i class="fa-solid fa-qrcode" style="color:var(--duo-blue);"></i> Quét mã vào thi ngay
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin-top:10px; font-weight:600;">
+            Dùng Camera điện thoại quét mã QR trên màn chiếu để tham gia trực tiếp.
+          </p>
+        </div>
+
+        <div>
+          <button class="host-start-btn" id="btn-admin-start">
+            <i class="fa-solid fa-play"></i> BẮT ĐẦU LÀM BÀI (MỞ KHÓA GIAO DIỆN)
+          </button>
+        </div>
+
+        <div style="margin-top: 14px; font-size: 0.88rem; color: var(--text-muted); font-weight:600;">
+          <i class="fa-solid fa-lock" style="color:var(--duo-blue);"></i> Bộ câu hỏi trắc nghiệm sẽ được mở khóa đồng loạt trên thiết bị của tất cả sinh viên.
+        </div>
+
+        <div style="margin-top: 28px; text-align: left;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h4 style="font-family:'Nunito',sans-serif; font-size: 1.1rem; font-weight:900; color:var(--primary-navy);">
+              <i class="fa-solid fa-users"></i> Sinh viên đã vào phòng (<span id="host-lobby-count" style="color:var(--duo-blue-dark);">0</span> bạn)
+            </h4>
+            <span style="font-size:0.82rem; color:var(--text-muted); font-weight:700;"><i class="fa-solid fa-rotate"></i> Tự động cập nhật</span>
+          </div>
+
+          <div class="host-players-grid" id="host-players-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: HOST QUESTION VIEW (PROJECTOR) -->
+    <section id="host-screen-question" class="screen">
+      <!-- Duolingo Shiny Animated Progress Bar -->
+      <div class="duo-progress-container" style="max-width:1000px; margin-bottom:8px;">
+        <span class="duo-progress-icon">🔥</span>
+        <div class="duo-progress-track">
+          <div class="duo-progress-fill" id="host-progress-fill" style="width: 5%;"></div>
+        </div>
+        <span class="duo-progress-icon">⭐</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; width:100%; max-width:1000px; margin-bottom:12px;">
+        <div class="q-counter-badge" style="font-size:1.15rem;">
+          <i class="fa-solid fa-layer-group" style="color:var(--duo-blue);"></i>
+          <span>CÂU <strong id="host-q-current">1</strong> / <span id="host-q-total">20</span></span>
+        </div>
+
+        <div class="timer-pill" id="host-timer-box" style="font-size:1.2rem; padding:6px 22px;">
+          <i class="fa-regular fa-clock"></i>
+          <span id="host-time-left">30</span>s
+        </div>
+
+        <div style="font-size: 0.95rem; font-weight: 800; color: var(--text-secondary); background:#ffffff; padding:8px 16px; border-radius:var(--radius-pill); border:2px solid var(--border-light); border-bottom:3.5px solid var(--border-3d); box-shadow:var(--shadow-sm);">
+          <i class="fa-solid fa-paper-plane" style="color:var(--duo-blue);"></i>
+          <span id="host-submission-ticker">0 / 0 đã nộp bài</span>
+        </div>
+      </div>
+
+      <div class="host-question-card">
+        <h2 class="host-question-title" id="host-question-text">Nội dung câu hỏi hiển thị cho cả lớp...</h2>
+        <div class="question-img-wrapper" id="host-question-img-wrap" style="display:none; max-height:260px;">
+          <img src="" alt="Hình minh họa" id="host-question-img" class="question-img" style="max-height:260px;">
+        </div>
+      </div>
+
+      <div class="host-ans-grid" id="host-answers-grid">
+        <div class="host-ans-card ans-0">
+          <span class="opt-letter">A</span>
+          <span id="host-opt-0">A. Đáp án A</span>
+        </div>
+        <div class="host-ans-card ans-1">
+          <span class="opt-letter">B</span>
+          <span id="host-opt-1">B. Đáp án B</span>
+        </div>
+        <div class="host-ans-card ans-2">
+          <span class="opt-letter">C</span>
+          <span id="host-opt-2">C. Đáp án C</span>
+        </div>
+        <div class="host-ans-card ans-3">
+          <span class="opt-letter">D</span>
+          <span id="host-opt-3">D. Đáp án D</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: HOST REVIEW & STATS VIEW -->
+    <section id="host-screen-review" class="screen">
+      <div style="width:100%; max-width:1000px; display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="font-family:'Nunito',sans-serif; font-size:1.35rem; font-weight:900; color:var(--primary-navy);">
+          <i class="fa-solid fa-chart-column" style="color:var(--duo-blue);"></i> Thống Kê Lựa Chọn Của Cả Lớp
+        </h3>
+
+        <button class="btn-primary" id="btn-admin-next" style="width:auto; padding:12px 28px; font-size:1rem;">
+          <span id="btn-next-label">CÂU TIẾP THEO</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- Stat Bars -->
+      <div class="stat-bars-container">
+        <div class="stat-bar-col">
+          <div class="stat-bar-fill" id="stat-bar-0" style="height:20px; background:linear-gradient(180deg,#f97316,#ea580c);">0</div>
+          <div class="stat-bar-label">Đáp án A</div>
+        </div>
+        <div class="stat-bar-col">
+          <div class="stat-bar-fill" id="stat-bar-1" style="height:20px; background:linear-gradient(180deg,#1cb0f6,#1899d6);">0</div>
+          <div class="stat-bar-label">Đáp án B</div>
+        </div>
+        <div class="stat-bar-col">
+          <div class="stat-bar-fill" id="stat-bar-2" style="height:20px; background:linear-gradient(180deg,#ff9600,#d97706);">0</div>
+          <div class="stat-bar-label">Đáp án C</div>
+        </div>
+        <div class="stat-bar-col">
+          <div class="stat-bar-fill" id="stat-bar-3" style="height:20px; background:linear-gradient(180deg,#58cc02,#16a34a);">0</div>
+          <div class="stat-bar-label">Đáp án D</div>
+        </div>
+      </div>
+
+      <!-- Explanation & Correct Answer -->
+      <div class="host-question-card" style="text-align:left; padding:22px 28px; margin-top:8px;">
+        <div style="font-family:'Nunito',sans-serif; font-size:1.15rem; font-weight:900; color:var(--duo-green-dark); margin-bottom:8px;">
+          <i class="fa-solid fa-circle-check"></i> ĐÁP ÁN ĐÚNG: <span id="host-review-correct-text">...</span>
+        </div>
+        <div style="font-size:0.95rem; color:var(--text-secondary); line-height:1.6;" id="host-review-explanation">
+          Giải thích chi tiết từ giáo trình Triết học Mác - Lênin...
+        </div>
+      </div>
+
+      <!-- Live Top 5 Leaderboard -->
+      <div class="host-question-card" style="text-align:left; padding:20px 28px; margin-top:8px;">
+        <h4 style="font-family:'Nunito',sans-serif; font-size:1.05rem; font-weight:900; color:var(--primary-navy); margin-bottom:12px;">
+          <i class="fa-solid fa-ranking-star" style="color:var(--accent-amber);"></i> BẢNG XẾP HẠNG TOP 5 TẠM THỜI
+        </h4>
+        <div id="host-top5-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: HOST FINAL CELEBRATION & EXCEL EXPORT -->
+    <section id="host-screen-final" class="screen">
+      <div class="final-container" style="max-width:1000px;">
+
+        <!-- Podium Top 3 -->
+        <div class="top20-banner">
+          <div style="font-size:3.2rem; margin-bottom:4px;">👑</div>
+          <h2>Vinh Danh Quán Quân & Điểm Cộng</h2>
+          <p>Học phần: Triết học Mác - Lênin (LLCT130105) • Nhóm VI</p>
+
+          <div class="podium-container" id="host-podium-wrap">
+            <!-- 2nd Place -->
+            <div class="podium-step">
+              <div style="font-family:'Nunito',sans-serif; font-weight:800; color:var(--text-secondary); font-size:1rem;" id="podium-2-name">Hạng 2</div>
+              <div style="font-size:0.85rem; color:var(--text-muted); font-weight:700;" id="podium-2-score">0 pts</div>
+              <div class="podium-pillar pillar-2">🥈 2</div>
+            </div>
+            <!-- 1st Place -->
+            <div class="podium-step">
+              <div style="font-family:'Nunito',sans-serif; font-weight:900; color:var(--primary-navy); font-size:1.2rem;" id="podium-1-name">Quán Quân</div>
+              <div style="font-size:0.92rem; color:var(--accent-amber); font-weight:800;" id="podium-1-score">0 pts</div>
+              <div class="podium-pillar pillar-1">🥇 1</div>
+            </div>
+            <!-- 3rd Place -->
+            <div class="podium-step">
+              <div style="font-family:'Nunito',sans-serif; font-weight:800; color:var(--text-secondary); font-size:1rem;" id="podium-3-name">Hạng 3</div>
+              <div style="font-size:0.85rem; color:var(--text-muted); font-weight:700;" id="podium-3-score">0 pts</div>
+              <div class="podium-pillar pillar-3">🥉 3</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top 20% Recognition Grid -->
+        <div class="academic-card" style="max-width:100%;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;">
+            <div>
+              <h3 style="font-family:'Nunito',sans-serif; font-size:1.25rem; font-weight:900; color:var(--primary-navy);">
+                <i class="fa-solid fa-award" style="color:var(--duo-yellow-dark);"></i> Top 20% Sinh Viên Đạt Điểm Cộng (+1.0 Điểm Chuyên Cần)
+              </h3>
+              <p style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">
+                Số lượng sinh viên đạt chuẩn: <strong id="host-top20-num" style="color:var(--duo-blue-dark);">0</strong> bạn
+              </p>
+            </div>
+            <a href="/api/export-excel-current" class="btn-secondary btn-excel" id="host-btn-export-excel">
+              <i class="fa-solid fa-file-excel"></i> Xuất File Excel (.xlsx)
+            </a>
+          </div>
+
+          <div class="top20-grid" id="host-final-top20-grid"></div>
+        </div>
+
+        <!-- Full Leaderboard Table -->
+        <div class="academic-card" style="max-width:100%;">
+          <h3 style="font-family:'Nunito',sans-serif; font-size:1.15rem; font-weight:900; color:var(--primary-navy); margin-bottom:12px;">
+            <i class="fa-solid fa-list-ol" style="color:var(--duo-blue);"></i> Bảng Xếp Hạng Toàn Bộ Lớp
+          </h3>
+          <div style="max-height:320px; overflow-y:auto; border:2px solid var(--border-light); border-radius:var(--radius-md);">
+            <table class="leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Hạng</th>
+                  <th>MSSV</th>
+                  <th>Họ và Tên</th>
+                  <th>Tổng Điểm</th>
+                  <th>Số Câu Đúng</th>
+                  <th>Tỉ Lệ</th>
+                  <th>Kết Quả</th>
+                </tr>
+              </thead>
+              <tbody id="host-full-leaderboard-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Host Controls Bottom Row -->
+        <div style="display:flex; justify-content:center; width:100%; margin-top:8px;">
+          <button class="btn-secondary" id="btn-host-reset-room">
+            <i class="fa-solid fa-rotate-right"></i> Đặt lại phòng thi (Lượt mới)
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="utils.js"></script>
+  <script src="host.js"></script>
+</body>
+</html>

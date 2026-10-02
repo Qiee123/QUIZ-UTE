@@ -1,0 +1,1088 @@
+{
+  "system": {
+    "name": "HCMUTE Triết Học EduQuiz",
+    "version": "1.0.0",
+    "university": "Trường Đại học Sư phạm Kỹ thuật TP.HCM (HCMUTE)",
+    "department": "Khoa Lý luận Chính trị - Bộ môn Triết học Mác - Lênin",
+    "course": "Triết học Mác - Lênin (LLCT130105)",
+    "lecturer": "ThS. Đoàn Thị Duyên",
+    "team": "Nhóm VI (Trương Văn Huy & Ngô Vỹ Khang)",
+    "activeQuizId": "triet-hoc-nguyen-nhan-ket-qua",
+    "roomPin": "130105"
+  },
+  "subjects": [
+    {
+      "id": "LLCT130105",
+      "code": "LLCT130105",
+      "name": "Triết học Mác - Lênin",
+      "faculty": "Khoa Lý luận Chính trị",
+      "university": "ĐH Sư phạm Kỹ thuật TP.HCM",
+      "lecturer": "ThS. Đoàn Thị Duyên",
+      "group": "Nhóm VI",
+      "quizzesCount": 1
+    },
+    {
+      "id": "LLCT120205",
+      "code": "LLCT120205",
+      "name": "Kinh tế chính trị Mác - Lênin",
+      "faculty": "Khoa Lý luận Chính trị",
+      "university": "ĐH Sư phạm Kỹ thuật TP.HCM",
+      "lecturer": "Giảng viên bộ môn",
+      "group": "Ngân hàng đề",
+      "quizzesCount": 0
+    },
+    {
+      "id": "LLCT120405",
+      "code": "LLCT120405",
+      "name": "Tư tưởng Hồ Chí Minh",
+      "faculty": "Khoa Lý luận Chính trị",
+      "university": "ĐH Sư phạm Kỹ thuật TP.HCM",
+      "lecturer": "Giảng viên bộ môn",
+      "group": "Ngân hàng đề",
+      "quizzesCount": 0
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "triet-hoc-nguyen-nhan-ket-qua",
+      "subjectId": "LLCT130105",
+      "title": "Cặp phạm trù Nguyên nhân và Kết quả trong Phép biện chứng duy vật",
+      "targetAudience": "Lớp học phần Triết học Mác - Lênin",
+      "bonusCriteria": "Top 20% sinh viên có điểm số cao nhất",
+      "totalQuestions": 20,
+      "estimatedTimeMinutes": "12 - 15 phút",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Theo quan điểm của phép biện chứng duy vật, \"Nguyên nhân\" được định nghĩa là gì?",
+          "type": "single_choice",
+          "options": [
+            "A. Sự việc bất kỳ xảy ra trước một sự việc khác trong thời gian.",
+            "B. Sự tác động lẫn nhau giữa các mặt trong một sự vật hoặc giữa các sự vật với nhau gây ra một biến đổi nhất định.",
+            "C. Môi trường và hoàn cảnh xung quanh sự vật.",
+            "D. Ý muốn chủ quan của con người khi nhận thức thế giới."
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 30,
+          "points": 1000,
+          "explanation": "Nguyên nhân là phạm trù chỉ sự tác động lẫn nhau giữa các mặt trong một sự vật hoặc giữa các sự vật với nhau, gây ra một biến đổi nhất định.",
+          "image": null
+        },
+        {
+          "id": 2,
+          "question": "\"Kết quả\" trong phép biện chứng duy vật là gì?",
+          "type": "single_choice",
+          "options": [
+            "A. Những biến đổi xuất hiện do sự tác động của nguyên nhân tạo ra.",
+            "B. Yếu tố quyết định sự sinh thành của nguyên nhân.",
+            "C. Sự kết thúc hoàn toàn của quá trình vận động mà không tạo ra cái mới.",
+            "D. Hiện tượng ngẫu nhiên không có nguồn gốc phát sinh."
+          ],
+          "correctAnswer": 0,
+          "timeLimit": 30,
+          "points": 1000,
+          "explanation": "Kết quả là phạm trù chỉ những biến đổi xuất hiện do tác động của nguyên nhân tạo ra.",
+          "image": null
+        },
+        {
+          "id": 3,
+          "question": "Điền vào chỗ trống quy luật cốt lõi: \"Nguyên nhân là cái làm ............... → Kết quả là cái được ...............\"",
+          "type": "single_choice",
+          "options": [
+            "A. mất đi / sinh ra",
+            "B. phát sinh / tạo ra",
+            "C. thay đổi / giữ nguyên",
+            "D. kết thúc / bắt đầu"
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 25,
+          "points": 1000,
+          "explanation": "Sơ đồ chuẩn trong giáo trình: Nguyên nhân làm phát sinh → Kết quả được tạo ra.",
+          "image": null
+        },
+        {
+          "id": 4,
+          "question": "Trong mối quan hệ nhân quả thông thường, trật tự thời gian diễn ra như thế nào?",
+          "type": "single_choice",
+          "options": [
+            "A. Kết quả luôn xuất hiện trước nguyên nhân.",
+            "B. Nguyên nhân và kết quả luôn xuất hiện đồng thời.",
+            "C. Nguyên nhân bao giờ cũng xuất hiện trước kết quả.",
+            "D. Không có trật tự thời gian xác định."
+          ],
+          "correctAnswer": 2,
+          "timeLimit": 25,
+          "points": 1000,
+          "explanation": "Nguyên nhân luôn có trước kết quả về mặt thời gian và sinh ra kết quả.",
+          "image": null
+        },
+        {
+          "id": 5,
+          "question": "Nhận định sau Đúng hay Sai: \"Mọi sự việc xảy ra trước theo trật tự thời gian đều là nguyên nhân của sự việc xảy ra sau?\"",
+          "type": "true_false",
+          "options": [
+            "A. ĐÚNG (Cứ xảy ra trước thì nhất định là nguyên nhân).",
+            "B. SAI (Cần phải có sự tác động qua lại làm phát sinh biến đổi mới là nguyên nhân)."
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 25,
+          "points": 1000,
+          "explanation": "Sai. Xảy ra trước chỉ là điều kiện cần chứ chưa đủ; phải có tác động qua lại làm phát sinh biến đổi thì mới là nguyên nhân.",
+          "image": null
+        },
+        {
+          "id": 6,
+          "question": "Yếu tố nào \"hỗ trợ hoặc tạo môi trường thuận lợi để nguyên nhân phát huy tác dụng nhưng không trực tiếp quyết định kết quả\"?",
+          "type": "single_choice",
+          "options": [
+            "A. Nguyên nhân chủ yếu",
+            "B. Điều kiện",
+            "C. Hệ quả ngẫu nhiên",
+            "D. Động lực phát triển"
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 30,
+          "points": 1000,
+          "explanation": "Điều kiện là tổng thể những yếu tố hỗ trợ, thúc đẩy hoặc kìm hãm nguyên nhân phát huy tác dụng.",
+          "image": null
+        },
+        {
+          "id": 7,
+          "question": "Điểm khác biệt lớn nhất giữa Nguyên nhân và Điều kiện là gì?",
+          "type": "single_choice",
+          "options": [
+            "A. Nguyên nhân trực tiếp tạo ra biến đổi và quyết định kết quả, còn điều kiện chỉ hỗ trợ.",
+            "B. Điều kiện trực tiếp tạo ra kết quả, còn nguyên nhân chỉ hỗ trợ.",
+            "C. Nguyên nhân và điều kiện có vai trò hoàn toàn giống nhau.",
+            "D. Điều kiện luôn xuất hiện trước, nguyên nhân xuất hiện sau."
+          ],
+          "correctAnswer": 0,
+          "timeLimit": 30,
+          "points": 1000,
+          "explanation": "Nguyên nhân trực tiếp tạo ra biến đổi và quyết định kết quả; điều kiện chỉ đóng vai trò hỗ trợ, xúc tác.",
+          "image": null
+        },
+        {
+          "id": 8,
+          "question": "Ví dụ về \"Công nghệ phát triển kéo theo năng suất tăng, sản phẩm tăng, đời sống và phương thức làm việc thay đổi\" minh họa cho quy luật nào?",
+          "type": "image_choice",
+          "options": [
+            "A. Một nguyên nhân chỉ sinh ra duy nhất một kết quả.",
+            "B. Một nguyên nhân có thể tạo ra nhiều kết quả khác nhau.",
+            "C. Kết quả xuất hiện mà không cần nguyên nhân.",
+            "D. Công nghệ không thể trở thành nguyên nhân của biến đổi xã hội."
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 35,
+          "points": 1000,
+          "explanation": "Một nguyên nhân (sự phát triển công nghệ) có thể sinh ra đồng thời nhiều kết quả tích cực trong kinh tế và xã hội.",
+          "image": "images/tech_growth.jpg"
+        },
+        {
+          "id": 9,
+          "question": "Hãy ghép đúng các yếu tố trong quá trình phát triển của thực vật (Cột 1) với vai trò tương ứng (Cột 2):\n(1) Hạt giống  |  (2) Đất, nước, ánh sáng, nhiệt độ\n(A) Điều kiện cần thiết hỗ trợ  |  (B) Nguyên nhân trực tiếp quyết định",
+          "type": "matching",
+          "options": [
+            "A. 1 - A, 2 - B",
+            "B. 1 - B, 2 - A",
+            "C. 1 - A, 2 - A",
+            "D. 1 - B, 2 - B"
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 40,
+          "points": 1000,
+          "explanation": "Hạt giống chứa phôi mầm sinh mệnh là Nguyên nhân trực tiếp (1-B); Đất, nước, ánh sáng là Điều kiện (2-A).",
+          "image": "images/plant.png"
+        },
+        {
+          "id": 10,
+          "question": "Ghép các luận điểm ở Cột A với ví dụ minh họa chính xác ở Cột B:\n(1) Một nguyên nhân tạo ra nhiều kết quả\n(2) Một kết quả do nhiều nguyên nhân tạo nên\n(A) Sinh viên học giỏi do: chăm chỉ + phương pháp + giảng viên + môi trường\n(B) Trồng rừng giúp: chống xói mòn + thanh lọc không khí + nguồn nước",
+          "type": "matching",
+          "options": [
+            "A. 1 - A, 2 - B",
+            "B. 1 - B, 2 - A",
+            "C. Cả 1 và 2 đều ghép với A",
+            "D. Cả 1 và 2 đều ghép với B"
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 40,
+          "points": 1000,
+          "explanation": "Trồng rừng (1 nguyên nhân) -> nhiều lợi ích (nhiều kết quả) => 1-B. Sinh viên học giỏi (1 kết quả) <- nhiều yếu tố => 2-A.",
+          "image": null
+        },
+        {
+          "id": 11,
+          "question": "Sắp xếp các bước sau theo đúng chuỗi chuyển hóa biện chứng trong học tập của sinh viên:\n(1) Kết quả học tập đạt điểm cao (A+)\n(2) Học tập chăm chỉ và có phương pháp\n(3) Thành tích học tập tiếp tục được nâng cao vượt bậc\n(4) Có thêm kiến thức, tự tin và tạo động lực học tập mạnh mẽ hơn",
+          "type": "single_choice",
+          "options": [
+            "A. (2) → (1) → (4) → (3)",
+            "B. (1) → (2) → (3) → (4)",
+            "C. (4) → (3) → (2) → (1)",
+            "D. (2) → (3) → (1) → (4)"
+          ],
+          "correctAnswer": 0,
+          "timeLimit": 45,
+          "points": 1000,
+          "explanation": "Thứ tự logic: Học tập chăm chỉ (2) sinh ra điểm cao (1), từ đó tạo sự tự tin/động lực (4), thúc đẩy thành tích cao hơn nữa (3).",
+          "image": "images/student_study.jpg"
+        },
+        {
+          "id": 12,
+          "question": "Bạn An đạt điểm A+ môn Triết học Mác - Lênin. An chia sẻ: \"Do mình chăm chỉ đọc tài liệu, học theo sơ đồ tư duy, được cô Đoàn Thị Duyên tận tình hướng dẫn và nhóm hỗ trợ rất tốt\". Tình huống này thể hiện tính chất gì?",
+          "type": "single_choice",
+          "options": [
+            "A. Một kết quả là sự tổng hợp tác động của nhiều nguyên nhân khác nhau.",
+            "B. Nguyên nhân và kết quả không có mối liên hệ với nhau.",
+            "C. Kết quả sinh ra hoàn toàn do may mắn ngẫu nhiên.",
+            "D. Một nguyên nhân duy nhất quyết định mọi việc."
+          ],
+          "correctAnswer": 0,
+          "timeLimit": 40,
+          "points": 1000,
+          "explanation": "Kết quả học giỏi của An là tổng hợp tương tác của nhiều nguyên nhân chủ quan (chăm chỉ, phương pháp) và khách quan (giảng viên, bạn bè).",
+          "image": null
+        },
+        {
+          "id": 13,
+          "question": "Vào mùa mưa tại TP.HCM, hiện tượng ngập đường xảy ra do: mưa lớn kéo dài, rác thải làm nghẹt cống và triều cường dâng cao. Yếu tố \"Ngập đường\" đóng vai trò là gì trong mối quan hệ này?",
+          "type": "single_choice",
+          "options": [
+            "A. Nguyên nhân trực tiếp",
+            "B. Điều kiện môi trường",
+            "C. Kết quả của sự tác động tổng hợp",
+            "D. Nguyên nhân gián tiếp"
+          ],
+          "correctAnswer": 2,
+          "timeLimit": 35,
+          "points": 1000,
+          "explanation": "Ngập đường là hiện tượng biến đổi xuất hiện do các nguyên nhân (mưa lớn, triều cường, rác nghẹt cống) tác động tạo thành.",
+          "image": null
+        },
+        {
+          "id": 14,
+          "question": "Khi sinh viên hoàn thành xuất sắc đồ án môn học (Kết quả), sự tự tin và kiến thức tích lũy được lại trở thành (Nguyên nhân) giúp tự tin làm khóa luận tốt nghiệp. Hiện tượng này chứng minh luận điểm nào?",
+          "type": "single_choice",
+          "options": [
+            "A. Nguyên nhân và kết quả luôn cố định, không bao giờ thay đổi vị trí.",
+            "B. Nguyên nhân và kết quả có thể chuyển hóa cho nhau trong các mối quan hệ khác nhau.",
+            "C. Kết quả không bao giờ có thể tác động ngược lại đời sống.",
+            "D. Đồ án môn học và khóa luận tốt nghiệp là hai việc hoàn toàn cô lập."
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 40,
+          "points": 1000,
+          "explanation": "Tính chất chuyển hóa biện chứng: Một sự vật hiện tượng trong mối quan hệ này là kết quả, nhưng trong mối quan hệ khác lại đóng vai trò là nguyên nhân.",
+          "image": null
+        },
+        {
+          "id": 15,
+          "question": "Nhận định sau Đúng hay Sai: \"Khi đánh giá kết quả rèn luyện của một sinh viên, giảng viên chỉ cần nhìn vào một bài kiểm tra duy nhất mà không cần xem xét toàn bộ quá trình phấn đấu của sinh viên đó?\"",
+          "type": "true_false",
+          "options": [
+            "A. ĐÚNG (Chỉ cần kết quả trước mắt là đủ).",
+            "B. SAI (Cần nhìn nhận biện chứng, đặt sự vật trong cả quá trình vận động và phát triển liên tục)."
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 30,
+          "points": 1000,
+          "explanation": "Sai. Phép biện chứng yêu cầu đánh giá toàn diện quá trình vận động, phát triển và tương tác của sinh viên.",
+          "image": null
+        },
+        {
+          "id": 16,
+          "question": "Quan sát sơ đồ tiến trình: [ NGUYÊN NHÂN A ➔ KẾT QUẢ B ➔ NGUYÊN NHÂN MỚI ➔ KẾT QUẢ C ➔ ... ]. Sơ đồ này muốn truyền tải thông điệp gì?",
+          "type": "single_choice",
+          "options": [
+            "A. Mối quan hệ nhân quả dừng lại ngay sau khi có kết quả đầu tiên.",
+            "B. Nguyên nhân và kết quả nằm trong một chuỗi các mối liên hệ liên tục và vận động không ngừng.",
+            "C. Kết quả C không có bất kỳ liên hệ nào với Nguyên nhân A ban đầu.",
+            "D. Các hiện tượng trong tự nhiên và xã hội diễn ra ngẫu nhiên, không theo chuỗi."
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 35,
+          "points": 1000,
+          "explanation": "Chuỗi nhân quả là vô tận, không có khâu đầu tiên tuyệt đối và không có khâu kết thúc tuyệt đối trong tự nhiên và xã hội.",
+          "image": null
+        },
+        {
+          "id": 17,
+          "question": "Hình ảnh \"Chiếc kính lúp soi vào tận gốc rễ cây răng cưa (Root Cause Analysis)\" trong bài thuyết trình đại diện cho ý nghĩa phương pháp luận nào?",
+          "type": "image_choice",
+          "options": [
+            "A. Chỉ cần giải quyết các biểu hiện bên ngoài của vấn đề.",
+            "B. Muốn hiểu đúng và giải quyết triệt để sự việc thì phải tìm đúng nguyên nhân gốc rễ bên trong.",
+            "C. Mọi nguyên nhân đều có vai trò ngang bằng nhau.",
+            "D. Không thể tìm ra nguyên nhân của các vấn đề phức tạp."
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 40,
+          "points": 1000,
+          "explanation": "Ý nghĩa phương pháp luận: Muốn giải quyết triệt để vấn đề phải đi sâu tìm hiểu nguyên nhân gốc rễ (Root Cause), tránh chỉ giải quyết hiện tượng bề ngoài.",
+          "image": "images/root_cause.jpg"
+        },
+        {
+          "id": 18,
+          "question": "Hình ảnh \"Hạt giống nảy mầm tươi tốt khi gặp đất ẩm và ánh nắng ấm áp\" giúp người học phân biệt trực quan điều gì?",
+          "type": "image_choice",
+          "options": [
+            "A. Hạt giống là Nguyên nhân trực tiếp; Đất, nước, ánh nắng là Điều kiện cần thiết.",
+            "B. Ánh nắng là Nguyên nhân trực tiếp; Hạt giống chỉ là Điều kiện.",
+            "C. Đất ẩm là Kết quả; Hạt giống là Điều kiện.",
+            "D. Cây phát triển không cần hạt giống nếu có đủ nước và đất."
+          ],
+          "correctAnswer": 0,
+          "timeLimit": 35,
+          "points": 1000,
+          "explanation": "Hạt giống chứa yếu tố quyết định nảy mầm (nguyên nhân), còn đất nước ánh nắng là môi trường kích hoạt (điều kiện).",
+          "image": "images/plant.png"
+        },
+        {
+          "id": 19,
+          "question": "Trong thực tiễn công việc và học tập, nếu bạn muốn loại bỏ hoặc thay đổi một kết quả không mong muốn (ví dụ: thường xuyên bị trễ Deadline), theo phép biện chứng bạn cần làm gì?",
+          "type": "single_choice",
+          "options": [
+            "A. Chỉ than vãn về kết quả mà không tìm hiểu lý do.",
+            "B. Tìm đúng nguyên nhân cốt lõi (như quản lý thời gian kém, trì hoãn) và tác động trực tiếp để khắc phục nguyên nhân đó.",
+            "C. Đổ lỗi hoàn toàn cho điều kiện thời tiết hoặc ngoại cảnh.",
+            "D. Chờ đợi kết quả tự thay đổi theo thời gian."
+          ],
+          "correctAnswer": 1,
+          "timeLimit": 35,
+          "points": 1000,
+          "explanation": "Muốn thay đổi kết quả thì phải tìm và tác động trực tiếp vào nguyên nhân sinh ra nó.",
+          "image": null
+        },
+        {
+          "id": 20,
+          "question": "Khi giải quyết một vấn đề phức tạp trong cuộc sống, việc phân biệt \"Nguyên nhân chủ yếu\" và \"Nguyên nhân thứ yếu\" giúp chúng ta đạt được lợi ích gì?",
+          "type": "single_choice",
+          "options": [
+            "A. Tập trung đúng trọng tâm, dồn nguồn lực giải quyết khâu then chốt để đạt hiệu quả cao nhất.",
+            "B. Không cần giải quyết nguyên nhân chủ yếu, chỉ cần làm nguyên nhân thứ yếu.",
+            "C. Bỏ qua mọi điều kiện khách quan.",
+            "D. Kéo dài thời gian giải quyết vấn đề."
+          ],
+          "correctAnswer": 0,
+          "timeLimit": 35,
+          "points": 1000,
+          "explanation": "Phân loại nguyên nhân giúp ta biết ưu tiên giải quyết nguyên nhân chủ yếu, then chốt trước, tránh dàn trải lãng phí nguồn lực.",
+          "image": null
+        }
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "id": "session_1790919442850",
+      "quizId": "triet-hoc-nguyen-nhan-ket-qua",
+      "quizTitle": "Cặp phạm trù Nguyên nhân và Kết quả trong Phép biện chứng duy vật",
+      "course": "Triết học Mác - Lênin (LLCT130105)",
+      "lecturer": "ThS. Đoàn Thị Duyên",
+      "createdAt": "2026-10-02T05:37:22.850Z",
+      "totalParticipants": 2,
+      "top20Count": 1,
+      "top20PercentThreshold": 20,
+      "results": [
+        {
+          "rank": 1,
+          "name": "Trương Văn Huy",
+          "studentId": "26TX810029",
+          "score": 9932,
+          "correctCount": 10,
+          "accuracy": 50,
+          "isTop20": true,
+          "bonusAwarded": "+1.0 điểm cộng",
+          "answers": {
+            "0": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 900,
+              "timeTaken": 6
+            },
+            "1": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 2
+            },
+            "2": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 3
+            },
+            "3": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 2
+            },
+            "4": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 4
+            },
+            "5": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 967,
+              "timeTaken": 2
+            },
+            "6": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 1017,
+              "timeTaken": 2
+            },
+            "7": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 3
+            },
+            "8": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 3
+            },
+            "9": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 963,
+              "timeTaken": 3
+            },
+            "10": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 3
+            },
+            "11": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 963,
+              "timeTaken": 3
+            },
+            "12": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 2
+            },
+            "13": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 950,
+              "timeTaken": 4
+            },
+            "14": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 1017,
+              "timeTaken": 2
+            },
+            "15": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 1071,
+              "timeTaken": 2
+            },
+            "16": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 1113,
+              "timeTaken": 3
+            },
+            "17": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 2
+            },
+            "18": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 971,
+              "timeTaken": 2
+            },
+            "19": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 2
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "name": "Trương Khánh Như",
+          "studentId": "26TX819922",
+          "score": 5955,
+          "correctCount": 6,
+          "accuracy": 30,
+          "isTop20": false,
+          "bonusAwarded": "Tham gia tích cực",
+          "answers": {
+            "0": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 3
+            },
+            "1": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 983,
+              "timeTaken": 1
+            },
+            "2": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "3": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "4": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 2
+            },
+            "5": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "6": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 983,
+              "timeTaken": 1
+            },
+            "7": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "8": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "9": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "10": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 989,
+              "timeTaken": 1
+            },
+            "11": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "12": {
+              "answer": 2,
+              "isCorrect": true,
+              "points": 1000,
+              "timeTaken": 0.5
+            },
+            "13": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "14": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 1000,
+              "timeTaken": 0.5
+            },
+            "15": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "16": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "17": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 1000,
+              "timeTaken": 0.5
+            },
+            "18": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "19": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "session_1790917243887",
+      "quizId": "triet-hoc-nguyen-nhan-ket-qua",
+      "quizTitle": "Cặp phạm trù Nguyên nhân và Kết quả trong Phép biện chứng duy vật",
+      "course": "Triết học Mác - Lênin (LLCT130105)",
+      "lecturer": "ThS. Đoàn Thị Duyên",
+      "createdAt": "2026-10-02T05:00:43.887Z",
+      "totalParticipants": 1,
+      "top20Count": 1,
+      "top20PercentThreshold": 20,
+      "results": [
+        {
+          "rank": 1,
+          "name": "Huy",
+          "studentId": "123",
+          "score": 3771,
+          "correctCount": 4,
+          "accuracy": 20,
+          "isTop20": true,
+          "bonusAwarded": "+1.0 điểm cộng",
+          "answers": {
+            "0": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 14
+            },
+            "1": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 850,
+              "timeTaken": 9
+            },
+            "2": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 1010,
+              "timeTaken": 2
+            },
+            "3": {
+              "answer": 3,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 3
+            },
+            "4": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "5": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 2
+            },
+            "6": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 933,
+              "timeTaken": 4
+            },
+            "7": {
+              "answer": 3,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 8
+            },
+            "8": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "9": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "10": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 978,
+              "timeTaken": 2
+            },
+            "11": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "12": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "13": {
+              "answer": 3,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "14": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "15": {
+              "answer": 3,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "16": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "17": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "18": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "19": {
+              "answer": 3,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "session_1790916661636",
+      "quizId": "triet-hoc-nguyen-nhan-ket-qua",
+      "quizTitle": "Cặp phạm trù Nguyên nhân và Kết quả trong Phép biện chứng duy vật",
+      "course": "Triết học Mác - Lênin (LLCT130105)",
+      "lecturer": "ThS. Đoàn Thị Duyên",
+      "createdAt": "2026-10-02T04:51:01.636Z",
+      "totalParticipants": 1,
+      "top20Count": 1,
+      "top20PercentThreshold": 20,
+      "results": [
+        {
+          "rank": 1,
+          "name": "Trương Văn Huy",
+          "studentId": "26TX810026",
+          "score": 6030,
+          "correctCount": 6,
+          "accuracy": 30,
+          "isTop20": true,
+          "bonusAwarded": "+1.0 điểm cộng",
+          "answers": {
+            "0": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 7
+            },
+            "1": {
+              "answer": 3,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 7
+            },
+            "2": {
+              "answer": 3,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 5
+            },
+            "3": {
+              "answer": 2,
+              "isCorrect": true,
+              "points": 980,
+              "timeTaken": 1
+            },
+            "4": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "5": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 1000,
+              "timeTaken": 0.5
+            },
+            "6": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "7": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "8": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 4
+            },
+            "9": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 1000,
+              "timeTaken": 0.5
+            },
+            "10": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 1050,
+              "timeTaken": 0.5
+            },
+            "11": {
+              "answer": 3,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "12": {
+              "answer": 1,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "13": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 1000,
+              "timeTaken": 0.5
+            },
+            "14": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "15": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "16": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "17": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 1000,
+              "timeTaken": 0.5
+            },
+            "18": {
+              "answer": 3,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "19": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "session_1790844227069",
+      "quizId": "triet-hoc-nguyen-nhan-ket-qua",
+      "quizTitle": "Cặp phạm trù Nguyên nhân và Kết quả trong Phép biện chứng duy vật",
+      "course": "Triết học Mác - Lênin (LLCT130105)",
+      "lecturer": "ThS. Đoàn Thị Duyên",
+      "createdAt": "2026-10-01T08:43:47.069Z",
+      "totalParticipants": 1,
+      "top20Count": 1,
+      "top20PercentThreshold": 20,
+      "results": [
+        {
+          "rank": 1,
+          "name": "TRƯƠNG",
+          "studentId": "Uuwuwu",
+          "score": 8144,
+          "correctCount": 8,
+          "accuracy": 40,
+          "isTop20": true,
+          "bonusAwarded": "+1.0 điểm cộng",
+          "answers": {
+            "0": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "1": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 983,
+              "timeTaken": 1
+            },
+            "2": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 2
+            },
+            "3": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "4": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "5": {
+              "answer": 2,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "6": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 1000,
+              "timeTaken": 0.5
+            },
+            "7": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "8": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "9": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 1
+            },
+            "10": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 989,
+              "timeTaken": 1
+            },
+            "11": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 1050,
+              "timeTaken": 0.5
+            },
+            "12": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "13": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "14": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "15": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 1000,
+              "timeTaken": 0.5
+            },
+            "16": {
+              "answer": 0,
+              "isCorrect": false,
+              "points": 0,
+              "timeTaken": 0.5
+            },
+            "17": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 986,
+              "timeTaken": 1
+            },
+            "18": {
+              "answer": 1,
+              "isCorrect": true,
+              "points": 1036,
+              "timeTaken": 1
+            },
+            "19": {
+              "answer": 0,
+              "isCorrect": true,
+              "points": 1100,
+              "timeTaken": 0.5
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

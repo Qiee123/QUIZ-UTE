@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>HCMUTE EduQuiz - Đấu Trí Triết Học Mác - Lênin</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="images/logo-ute.png">
+</head>
+<body>
+  <!-- Modern Duolingo-style Header -->
+  <header class="app-header">
+    <div class="brand-wrapper">
+      <img src="images/logo-ute.png" alt="HCMUTE Logo" class="ute-logo">
+      <div class="brand-text">
+        <h1>HCMUTE <span class="highlight">EduQuiz</span></h1>
+        <p>Triết học Mác - Lênin • LLCT130105</p>
+      </div>
+    </div>
+    <div class="header-controls">
+      <div class="audio-control-wrap">
+        <button type="button" class="audio-toggle-btn" id="btn-audio-toggle" title="Bật/Tắt âm thanh">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <input type="range" class="volume-range" id="volume-slider" min="0" max="100" value="85" title="Điều chỉnh âm lượng">
+      </div>
+      <div class="room-pin-badge">
+        <i class="fa-solid fa-bolt" style="color:var(--duo-yellow-dark);"></i> PIN: <span id="header-pin">130105</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-wrapper">
+
+    <!-- SCREEN 1: JOIN FORM -->
+    <section id="screen-join" class="screen active">
+      <div class="academic-card">
+        <div class="join-header">
+          <div class="join-mascot-badge">🎓</div>
+          <span class="join-badge">Khảo sát & Đấu trí lớp học</span>
+          <h2>Săn Điểm Cộng Triết Học</h2>
+          <p>Cặp phạm trù Nguyên nhân và Kết quả</p>
+        </div>
+
+        <form id="join-form">
+          <div class="input-group">
+            <label for="input-name"><i class="fa-solid fa-user"></i> Họ và tên sinh viên <span style="color:#ef4444">*</span></label>
+            <input type="text" id="input-name" class="modern-input" placeholder="Ví dụ: Trương Văn Huy" required autofocus autocomplete="name" autocapitalize="words" spellcheck="false">
+            <div style="font-size:0.78rem; color:var(--text-muted); margin-top:5px; line-height:1.4;">
+              <i class="fa-solid fa-circle-exclamation" style="color:var(--accent-amber);"></i> Bắt buộc nhập đầy đủ <strong>Họ và Tên</strong> (ví dụ: <strong>Trương Văn Huy</strong>), không dùng tên 1 chữ hoặc biệt danh.
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="input-mssv"><i class="fa-solid fa-id-card"></i> Mã số sinh viên (MSSV) <span style="color:#ef4444">*</span></label>
+            <input type="text" id="input-mssv" class="modern-input" placeholder="Ví dụ: 26TX810026" required autocomplete="off" style="text-transform: uppercase;">
+            <div style="font-size:0.78rem; color:var(--text-muted); margin-top:5px; line-height:1.4;">
+              <i class="fa-solid fa-id-badge" style="color:var(--duo-blue);"></i> Nhập mã số sinh viên (ví dụ: <strong>26TX810026</strong> hoặc <strong>23110001</strong>).
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="input-pin"><i class="fa-solid fa-key"></i> Mã PIN phòng thi</label>
+            <input type="text" id="input-pin" class="modern-input" value="130105" required inputmode="numeric" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn-primary" id="btn-join">
+            <span>Vào Phòng Chờ Ngay</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <div style="margin-top: 14px; text-align: center;">
+            <button type="button" class="btn-secondary" id="btn-show-player-qr" style="width: 100%; justify-content: center;">
+              <i class="fa-solid fa-qrcode"></i> Quét mã QR tham gia
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: WAITING LOBBY -->
+    <section id="screen-lobby" class="screen">
+      <div class="academic-card lobby-card">
+        <div class="lobby-mascot-pulse">⏳</div>
+
+        <h2 class="lobby-title">Đang Chờ Chủ Phòng Bắt Đầu</h2>
+        <p class="lobby-desc">Giao diện câu hỏi đang được khóa bảo mật. Khi giảng viên kích hoạt, 20 câu hỏi sẽ tự động xuất hiện đồng bộ.</p>
+
+        <div class="lock-alert">
+          <i class="fa-solid fa-shield-halved" style="color:var(--duo-blue); font-size:1.3rem;"></i>
+          <span>Tất cả sinh viên sẽ cùng làm bài đồng bộ vào cùng một thời điểm.</span>
+        </div>
+
+        <div class="player-info-pill">
+          <i class="fa-solid fa-circle-check"></i>
+          <span id="lobby-player-name">Nguyễn Văn An</span>
+          <span style="opacity:0.8;" id="lobby-player-mssv">(23110001)</span>
+        </div>
+
+        <div class="peers-section">
+          <div class="peers-count-label">
+            <i class="fa-solid fa-users"></i> Đã tham gia: <strong id="lobby-peer-count" style="color:var(--duo-blue-dark);">0</strong> bạn
+          </div>
+          <div class="peers-grid" id="lobby-peers-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: LIVE QUESTION INTERFACE -->
+    <section id="screen-question" class="screen">
+      <div class="quiz-container">
+        <!-- Duolingo Shiny Animated Progress Bar -->
+        <div class="duo-progress-container">
+          <span class="duo-progress-icon">🔥</span>
+          <div class="duo-progress-track">
+            <div class="duo-progress-fill" id="duo-progress-fill" style="width: 5%;"></div>
+          </div>
+          <span class="duo-progress-icon">⭐</span>
+        </div>
+
+        <!-- Top Bar -->
+        <div class="quiz-top-bar">
+          <div class="q-counter-badge">
+            <i class="fa-solid fa-layer-group" style="color:var(--duo-blue);"></i>
+            <span>Câu <strong id="q-current">1</strong>/<span id="q-total">20</span></span>
+          </div>
+
+          <div class="timer-pill" id="timer-box">
+            <i class="fa-regular fa-clock"></i>
+            <span id="time-left">30</span>s
+          </div>
+
+          <div class="player-live-stats">
+            <i class="fa-solid fa-gem" style="color:var(--duo-blue);"></i>
+            <span id="player-score-badge">0 XP</span>
+          </div>
+        </div>
+
+        <!-- Question Box -->
+        <div class="question-box">
+          <h2 class="question-text" id="question-text">Đang tải câu hỏi...</h2>
+          <div class="question-img-wrapper" id="question-img-wrap" style="display:none;">
+            <img src="" alt="Minh họa câu hỏi" id="question-img" class="question-img">
+          </div>
+        </div>
+
+        <!-- Submission Status Indicator -->
+        <div id="submit-notice" style="display:none; text-align:center; padding: 8px; background:var(--duo-blue-subtle); border:1.5px solid #bfdbfe; border-radius:var(--radius-md); color: var(--duo-blue-dark); font-weight:800; font-size: 0.92rem;">
+          <i class="fa-solid fa-circle-check"></i> Đã ghi nhận đáp án! Chờ hết giờ để xem kết quả...
+        </div>
+
+        <!-- 4 Options Grid -->
+        <div class="answers-grid" id="answers-grid">
+          <button class="answer-card ans-0" data-idx="0">
+            <span class="opt-letter">A</span>
+            <span class="ans-label" id="opt-0-text">Đáp án A</span>
+          </button>
+          <button class="answer-card ans-1" data-idx="1">
+            <span class="opt-letter">B</span>
+            <span class="ans-label" id="opt-1-text">Đáp án B</span>
+          </button>
+          <button class="answer-card ans-2" data-idx="2">
+            <span class="opt-letter">C</span>
+            <span class="ans-label" id="opt-2-text">Đáp án C</span>
+          </button>
+          <button class="answer-card ans-3" data-idx="3">
+            <span class="opt-letter">D</span>
+            <span class="ans-label" id="opt-3-text">Đáp án D</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 4: QUESTION RESULT REVIEW -->
+    <section id="screen-review" class="screen">
+      <div class="academic-card result-card">
+        <div class="feedback-status correct" id="review-feedback-status">
+          <i class="fa-solid fa-circle-check"></i>
+          <span id="review-feedback-title">CHÍNH XÁC</span>
+        </div>
+        
+        <div class="points-reward-badge" id="review-points-badge">
+          <i class="fa-solid fa-bolt" style="color:var(--duo-yellow-dark);"></i> +950 XP
+        </div>
+
+        <!-- Live Instant Rank Box -->
+        <div class="live-rank-box" id="review-rank-box">
+          <div class="live-rank-label"><i class="fa-solid fa-ranking-star"></i> VỊ TRÍ CỦA BẠN HIỆN TẠI</div>
+          <div class="live-rank-main">
+            <span class="live-rank-val" id="review-rank">#1</span>
+            <span class="live-rank-total" id="review-rank-total">/ 0 bạn</span>
+          </div>
+          <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 4px; font-weight:700;">
+            Tổng điểm: <strong id="review-total-score" style="color:var(--primary-navy);">0</strong> điểm
+          </div>
+          <div class="live-rank-pill" id="review-top20-pill">
+            <i class="fa-solid fa-trophy" style="color:var(--accent-amber);"></i> <span id="review-top20-text">Đang trong Top 20% Nhận Điểm Cộng</span>
+          </div>
+        </div>
+
+        <div class="explanation-box">
+          <strong><i class="fa-solid fa-book-bookmark" style="color:var(--duo-blue);"></i> Căn cứ lý luận & Giải thích:</strong>
+          <span id="review-explanation-text">Giải thích chi tiết...</span>
+        </div>
+
+        <p style="margin-top: 16px; font-size: 0.85rem; color: var(--text-muted); font-weight:600;">
+          <i class="fa-solid fa-hourglass-half"></i> Chờ chủ phòng chuyển sang câu hỏi tiếp theo...
+        </p>
+      </div>
+    </section>
+
+    <!-- SCREEN 5: FINAL PODIUM & TOP 20% ANNOUNCEMENT -->
+    <section id="screen-final" class="screen">
+      <div class="final-container">
+        <!-- Top 20% Banner -->
+        <div class="top20-banner" id="user-top20-banner">
+          <div style="font-size:3rem; margin-bottom:6px;">🏆</div>
+          <h2>Kết Quả Đánh Giá & Điểm Cộng</h2>
+          <p id="user-bonus-status">Hoàn thành bộ 20 câu hỏi trắc nghiệm.</p>
+          <div id="user-personal-rank-badge" style="margin-top:12px; font-size:1.1rem; font-weight:800; color:var(--primary-navy);"></div>
+        </div>
+
+        <!-- Top 20% List -->
+        <div class="academic-card" style="max-width:100%;">
+          <h3 style="font-family:'Nunito',sans-serif; font-size:1.25rem; font-weight:900; margin-bottom:4px; color:var(--primary-navy);">
+            <i class="fa-solid fa-medal" style="color:var(--duo-yellow-dark);"></i> Danh Sách Top 20% Sinh Viên Đạt Điểm Cao Nhất
+          </h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:14px; font-weight:600;">
+            Gồm <span id="final-top20-count" style="color:var(--duo-blue-dark); font-weight:800;">0</span> bạn có số điểm cao nhất được đề xuất cộng +1.0 điểm chuyên cần.
+          </p>
+          <div class="top20-grid" id="final-top20-list"></div>
+        </div>
+
+        <!-- Action Buttons (Student only views their own answer history) -->
+        <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center; width:100%;">
+          <button class="btn-secondary" id="btn-view-my-history" style="padding:14px 28px; font-weight:800;">
+            <i class="fa-solid fa-clock-rotate-left"></i> Xem chi tiết lịch sử 20 câu trả lời của tôi
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- COUNTDOWN OVERLAY -->
+  <div class="countdown-screen" id="countdown-overlay">
+    <div class="countdown-number" id="countdown-num">3</div>
+    <div class="countdown-label">Chuẩn bị làm bài</div>
+  </div>
+
+  <!-- MODAL: DETAILED ANSWER HISTORY -->
+  <div class="modal-overlay" id="history-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-list-check" style="color:var(--duo-blue);"></i> Lịch Sử Trả Lời 20 Câu Hỏi</h3>
+        <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" id="history-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- MODAL: QR CODE SHARE -->
+  <div class="modal-overlay" id="qr-modal">
+    <div class="modal-content" style="max-width: 380px; text-align: center; padding: 24px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 14px;">
+        <h3 style="font-size: 1.15rem; font-weight:900; color: var(--primary-navy);">
+          <i class="fa-solid fa-qrcode" style="color:var(--duo-blue);"></i> Quét Mã Vào Thi
+        </h3>
+        <button class="modal-close-btn" id="qr-modal-close-btn">&times;</button>
+      </div>
+
+      <div style="background: #ffffff; padding: 12px; border-radius: 16px; display: inline-block; border: 2px solid var(--border-light); border-bottom: 4px solid var(--border-3d); box-shadow: var(--shadow-sm);">
+        <img id="player-qr-img" src="" alt="Mã QR Tham Gia" style="width: 220px; height: 220px; display: block; border-radius: 8px;">
+      </div>
+      
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 14px; font-weight:600;">
+        Dùng Camera điện thoại quét mã QR để vào phòng thi tức thì.
+      </p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="utils.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
