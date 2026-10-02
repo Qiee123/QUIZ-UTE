@@ -23,6 +23,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Healthcheck endpoints for Cloud Deployment (Render, Railway, Fly)
+app.get(['/healthz', '/health'], (req, res) => {
+  res.status(200).json({ status: 'healthy', uptime: process.uptime() });
+});
+
 // Database Helpers
 function getDB() {
   try {
