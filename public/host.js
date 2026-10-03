@@ -49,18 +49,19 @@ if (hostVolumeSlider) {
   });
 }
 
-// Display URL & Load QR Code from API
+// Display URL & Load QR Code using dynamic browser origin
+const currentOrigin = window.location.origin;
+const hostJoinUrlEl = document.getElementById('host-join-url');
+if (hostJoinUrlEl) hostJoinUrlEl.textContent = currentOrigin;
+
 fetch('/api/info')
   .then(res => res.json())
   .then(info => {
-    if (info && info.joinUrl) {
-      document.getElementById('host-join-url').textContent = info.joinUrl;
-      const pinEl = document.getElementById('host-pin-val');
-      if (pinEl && info.pin) pinEl.textContent = info.pin;
+    const pinEl = document.getElementById('host-pin-val');
+    if (pinEl && info.pin) pinEl.textContent = info.pin;
 
-      // Fetch QR Code Data URL for this join URL
-      return fetch(`/api/qrcode?url=${encodeURIComponent(info.joinUrl)}`);
-    }
+    // Fetch QR Code for the current public web URL
+    return fetch(`/api/qrcode?url=${encodeURIComponent(currentOrigin)}`);
   })
   .then(res => res ? res.json() : null)
   .then(qrData => {
@@ -71,7 +72,7 @@ fetch('/api/info')
   })
   .catch(err => {
     console.error('Error loading QR code:', err);
-    document.getElementById('host-join-url').textContent = window.location.origin;
+    if (hostJoinUrlEl) hostJoinUrlEl.textContent = window.location.origin;
   });
 
 // Register as host

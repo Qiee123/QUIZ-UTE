@@ -854,17 +854,25 @@ function getLocalIP() {
 }
 
 app.get('/api/info', (req, res) => {
+  const forwardedHost = req.headers['x-forwarded-host'] || req.headers.host;
+  const proto = req.headers['x-forwarded-proto'] || (req.secure ? 'https' : 'http');
+  const publicUrl = forwardedHost ? `${proto}://${forwardedHost}` : `http://${getLocalIP()}:${PORT}`;
+
   res.json({
     lanIp: getLocalIP(),
     port: PORT,
-    joinUrl: `http://${getLocalIP()}:${PORT}`,
+    joinUrl: publicUrl,
     pin: gameState.roomPin
   });
 });
 
 app.get('/api/qrcode', async (req, res) => {
   try {
-    const targetUrl = req.query.url || `http://${getLocalIP()}:${PORT}`;
+    const forwardedHost = req.headers['x-forwarded-host'] || req.headers.host;
+    const proto = req.headers['x-forwarded-proto'] || (req.secure ? 'https' : 'http');
+    const defaultUrl = forwardedHost ? `${proto}://${forwardedHost}` : `http://${getLocalIP()}:${PORT}`;
+    const targetUrl = req.query.url || defaultUrl;
+
     const qrDataUrl = await QRCode.toDataURL(targetUrl, {
       margin: 2,
       width: 320,
