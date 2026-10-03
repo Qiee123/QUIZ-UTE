@@ -1253,6 +1253,56 @@ body::before {
   gap: 12px;
 }
 
+/* QR Modal Specific High-End Card */
+.qr-modal-box {
+  max-width: 380px !important;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 51, 102, 0.2);
+}
+
+.qr-modal-header {
+  padding: 16px 20px;
+  background: #f8fafc;
+  border-bottom: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qr-modal-body {
+  padding: 24px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.qr-image-card {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 20px;
+  border: 2px solid var(--border-light);
+  border-bottom: 5px solid var(--border-3d);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  width: 236px;
+  height: 236px;
+}
+
+.qr-image-card img {
+  width: 210px;
+  height: 210px;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+}
+
 .history-item {
   background: #f8fafc;
   border: 2px solid var(--border-light);

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>HCMUTE EduQuiz - Đấu Trí Triết Học Mác - Lênin</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" href="images/logo-ute.png">
 </head>
@@ -54,10 +54,10 @@
           </div>
 
           <div class="input-group">
-            <label for="input-mssv"><i class="fa-solid fa-id-card"></i> Mã số sinh viên (MSSV) <span style="color:#ef4444">*</span></label>
-            <input type="text" id="input-mssv" class="modern-input" placeholder="Ví dụ: 26TX810026" required autocomplete="off" style="text-transform: uppercase;">
+            <label for="input-mssv"><i class="fa-solid fa-id-card"></i> Mã số sinh viên (MSSV) <span style="color:var(--text-muted); font-size:0.78rem; font-weight:600;">(Tùy chọn)</span></label>
+            <input type="text" id="input-mssv" class="modern-input" placeholder="26TX810026" autocomplete="off" style="text-transform: uppercase;">
             <div style="font-size:0.78rem; color:var(--text-muted); margin-top:5px; line-height:1.4;">
-              <i class="fa-solid fa-id-badge" style="color:var(--duo-blue);"></i> Nhập mã số sinh viên (ví dụ: <strong>26TX810026</strong> hoặc <strong>23110001</strong>).
+              <i class="fa-solid fa-circle-info" style="color:var(--duo-blue);"></i> Nhập mã số sinh viên theo mẫu <strong>26TX810026</strong> (không bắt buộc nếu chưa có).
             </div>
           </div>
 
@@ -263,27 +263,33 @@
 
   <!-- MODAL: QR CODE SHARE -->
   <div class="modal-overlay" id="qr-modal">
-    <div class="modal-content" style="max-width: 380px; text-align: center; padding: 24px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 14px;">
-        <h3 style="font-size: 1.15rem; font-weight:900; color: var(--primary-navy);">
-          <i class="fa-solid fa-qrcode" style="color:var(--duo-blue);"></i> Quét Mã Vào Thi
+    <div class="modal-content qr-modal-box">
+      <div class="qr-modal-header">
+        <h3 style="font-family:'Nunito',sans-serif; font-size: 1.15rem; font-weight:900; color: var(--primary-navy); display:flex; align-items:center; gap:8px;">
+          <i class="fa-solid fa-qrcode" style="color:var(--duo-blue);"></i> Quét Mã Vào Phòng Thi
         </h3>
         <button class="modal-close-btn" id="qr-modal-close-btn">&times;</button>
       </div>
 
-      <div style="background: #ffffff; padding: 12px; border-radius: 16px; display: inline-block; border: 2px solid var(--border-light); border-bottom: 4px solid var(--border-3d); box-shadow: var(--shadow-sm);">
-        <img id="player-qr-img" src="" alt="Mã QR Tham Gia" style="width: 220px; height: 220px; display: block; border-radius: 8px;">
+      <div class="qr-modal-body">
+        <div class="qr-image-card">
+          <img id="player-qr-img" src="" alt="Mã QR Tham Gia">
+        </div>
+
+        <button type="button" class="btn-secondary" id="btn-copy-join-link" style="width: 100%; justify-content: center; padding: 11px 16px; margin-bottom: 10px; font-size: 0.9rem;">
+          <i class="fa-regular fa-copy"></i> <span id="copy-btn-text">Sao chép link phòng thi</span>
+        </button>
+        
+        <p style="font-size: 0.82rem; color: var(--text-muted); font-weight:600; line-height: 1.4; margin: 0;">
+          Dùng Camera điện thoại quét mã QR hoặc mở link để vào phòng thi tức thì.
+        </p>
       </div>
-      
-      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 14px; font-weight:600;">
-        Dùng Camera điện thoại quét mã QR để vào phòng thi tức thì.
-      </p>
     </div>
   </div>
 
   <!-- Scripts -->
   <script src="/socket.io/socket.io.js"></script>
-  <script src="utils.js?v=2.5"></script>
-  <script src="app.js?v=2.5"></script>
+  <script src="utils.js?v=3.0"></script>
+  <script src="app.js?v=3.0"></script>
 </body>
 </html>

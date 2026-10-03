@@ -107,23 +107,18 @@ if (joinForm) {
       return;
     }
 
-    if (!studentId || studentId.length < 3) {
-      alert('Vui lòng nhập Mã số sinh viên hợp lệ (ví dụ: 26TX810026 hoặc 23110001)!');
-      document.getElementById('input-mssv').focus();
-      return;
-    }
-
+    // MSSV is optional (không bắt buộc)
     // Save to localStorage for convenience
     localStorage.setItem('eduquiz_name', name);
-    localStorage.setItem('eduquiz_mssv', studentId);
-    localStorage.setItem('eduquiz_pin', pin);
+    if (studentId) localStorage.setItem('eduquiz_mssv', studentId);
+    if (pin) localStorage.setItem('eduquiz_pin', pin);
 
     window.soundFX.init();
     window.soundFX.playPop();
 
     socket.emit('player_join', {
       name,
-      studentId,
+      studentId: studentId || '',
       pin,
       avatar: '🎓'
     });
@@ -437,6 +432,24 @@ if (btnShowPlayerQr) {
 if (qrModalCloseBtn) {
   qrModalCloseBtn.addEventListener('click', () => {
     if (qrModal) qrModal.classList.remove('active');
+  });
+}
+
+const btnCopyJoinLink = document.getElementById('btn-copy-join-link');
+if (btnCopyJoinLink) {
+  btnCopyJoinLink.addEventListener('click', () => {
+    const currentUrl = window.location.origin;
+    navigator.clipboard.writeText(currentUrl).then(() => {
+      const textEl = document.getElementById('copy-btn-text');
+      if (textEl) {
+        textEl.textContent = 'Đã sao chép link thành công!';
+        setTimeout(() => {
+          textEl.textContent = 'Sao chép link phòng thi';
+        }, 2000);
+      }
+    }).catch(() => {
+      prompt('Link phòng thi của bạn:', currentUrl);
+    });
   });
 }
 

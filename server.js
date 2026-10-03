@@ -138,13 +138,6 @@ io.on('connection', (socket) => {
       return;
     }
 
-    if (!cleanMSSV || cleanMSSV.length < 3) {
-      socket.emit('join_error', { 
-        message: 'Vui lòng nhập Mã số sinh viên hợp lệ (ví dụ: 26TX810026 hoặc 23110001)!' 
-      });
-      return;
-    }
-
     // Check if player is reconnecting with same studentId or name
     let existingKey = Object.keys(gameState.players).find(k => {
       const p = gameState.players[k];
